@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الهيكل الإداري | ابتدائية محلاه والطفولة المبكرة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- شريط علوي صغير -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__right">
+        <span class="badge">وزارة التعليم</span>
+        <span class="muted">Ministry of Education</span>
+      </div>
+      <div class="topbar__left">
+        <a class="toplink" href="index.html#contact">اتصل بنا</a>
+        <a class="toplink" href="index.html#elearning">التعلم الإلكتروني</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <div class="logo">شعار</div>
+        <div class="brand__text">
+          <h1>ابتدائية محلاه والطفولة المبكرة</h1>
+          <p class="muted">الهيكل الإداري</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="القائمة الرئيسية">
+        <button class="nav__toggle" aria-label="فتح القائمة" onclick="toggleMenu()">☰</button>
+        <ul id="navList" class="nav__list">
+          <li><a href="index.html#home">الرئيسية</a></li>
+          <li><a href="index.html#about">عن المدرسة</a></li>
+          <li><a href="index.html#admin">الإدارة المدرسية</a></li>
+          <li><a href="index.html#students">شؤون الطلاب</a></li>
+          <li><a href="index.html#news">الأخبار</a></li>
+          <li><a href="index.html#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- عنوان الصفحة -->
+  <section class="section">
+    <div class="container">
+      <div class="section__title">
+        <h3>الهيكل الإداري للمدرسة</h3>
+        <p class="muted">تصميم رسمي مودرن (قابل للتعديل وإضافة الأسماء لاحقًا)</p>
+      </div>
+
+      <!-- الهيكل -->
+      <div class="org">
+       <div class="org org--moe">
+  <!-- المستوى 1 -->
+  <div class="org-level">
+    <div class="org-node org-node--top">
+      <div class="org-title">مدير المدرسة</div>
+      <div class="org-sub muted">اسم المديرة/المدير (اختياري)</div>
+    </div>
+  </div>
+
+  <div class="org-connector"></div>
+
+  <!-- المستوى 2 (وكيل واحد) -->
+  <div class="org-level">
+    <div class="org-node org-node--main">
+      <div class="org-title">الوكيل للشؤون المدرسية وشؤون الطلاب</div>
+      <div class="org-sub muted">اسم الوكيل/ة (اختياري)</div>
+    </div>
+  </div>
+
+  <!-- وصلات من الوكيل إلى الأعمدة -->
+  <div class="org-split">
+    <div class="org-split__stem"></div>
+    <div class="org-split__bar"></div>
+    <div class="org-split__legs">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- المستوى 3 (ثلاثة أعمدة مثل الصورة) -->
+  <div class="org-cols">
+    <!-- العمود الأيسر: المعلمات -->
+    <div class="org-col">
+      <div class="org-item">معلمو/معلمات المواد الدراسية</div>
+      <!-- تم حذف: معلم الموهوبين + التربية الخاصة + مساعد المعلم -->
+    </div>
+
+    <!-- العمود الأوسط: نشاط + إداري + حارس -->
+    <div class="org-col">
+      <div class="org-item">رائد النشاط الطلابي</div>
+      <!-- تم حذف: محضر المختبر -->
+      <div class="org-item">المساعد الإداري <span class="muted">(خدمات المساندة والجودة)</span></div>
+      <!-- تم حذف: موظفة خدمات -->
+      <div class="org-item">الحارس</div>
+    </div>
+
+    <!-- العمود الأيمن: توجيه + صحي + عامل -->
+    <div class="org-col">
+      <div class="org-item">الموجه الطلابي</div>
+      <!-- تم حذف: أمين مصادر التعلم + مسجل المعلومات -->
+      <div class="org-item">الموجه الصحي</div>
+      <div class="org-item">عامل خدمات</div>
+    </div>
+  </div>
+
+  <div class="org-note">
+    <strong>تم الحذف حسب طلبكم:</strong>
+    معلم مواهب، معلم التربية الخاصة، مساعد المعلم، أمين مصادر التعلم، محضر المختبر، مسجل المعلومات، موظفة خدمات.
+  </div>
+</div>
+
+      <div style="margin-top:16px;">
+        <a class="btn btn--ghost" href="index.html#about">رجوع إلى (عن المدرسة)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> ابتدائية محلاه والطفولة المبكرة — جميع الحقوق محفوظة</p>
+      <p class="muted">صفحة الهيكل الإداري</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

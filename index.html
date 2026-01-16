@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ابتدائية محلاه والطفولة المبكرة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- شريط علوي صغير -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__right">
+        <span class="badge">وزارة التعليم</span>
+        <span class="muted">Ministry of Education</span>
+      </div>
+      <div class="topbar__left">
+        <a class="toplink" href="#contact">اتصل بنا</a>
+        <a class="toplink" href="#elearning">التعلم الإلكتروني</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <div class="logo">شعار</div>
+        <div class="brand__text">
+          <h1>ابتدائية محلاه والطفولة المبكرة</h1>
+          <p class="muted">عسير • الحرجة • محلاه</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="القائمة الرئيسية">
+        <button class="nav__toggle" aria-label="فتح القائمة" onclick="toggleMenu()">☰</button>
+        <ul id="navList" class="nav__list">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">عن المدرسة</a></li>
+          <li><a href="#admin">الإدارة المدرسية</a></li>
+          <li><a href="#students">شؤون الطلاب</a></li>
+          <li><a href="#guidance">الإرشاد الطلابي</a></li>
+          <li><a href="#teaching">التعليم والتعلم</a></li>
+          <li><a href="#news">الأخبار</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- البانر -->
+  <section id="home" class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h2>نحو بيئة تعليمية محفّزة وآمنة</h2>
+        <p class="muted">
+          منصة المدرسة للخدمات، الأخبار، البرامج، وروابط الأدلة والنماذج بشكل منظم وسهل الوصول.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#icons">عرض الأيقونات</a>
+          <a class="btn btn--ghost" href="#news">آخر الأخبار</a>
+        </div>
+        <div class="hero__quick">
+          <a class="chip" href="https://www.saadalsahli.sa/wp-content/uploads/2025/08/1447.pdf" target="_blank" rel="noopener">
+            قواعد السلوك والمواظبة (PDF)
+          </a>
+          <a class="chip" href="#contact">واتساب المدرسة</a>
+        </div>
+      </div>
+
+      <div class="hero__media" aria-label="صورة المدرسة">
+        <!-- استبدلي الصورة لاحقًا -->
+        <div class="hero__image">
+          <span>صورة المدرسة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الأيقونات -->
+  <section id="icons" class="section">
+    <div class="container">
+        <!-- عنوان الأقسام الرئيسية -->
+<div class="icons-title">
+  <h3>الأقسام الرئيسية</h3>
+  <p>الأقسام المحورية التي تمثل جوهر العمل الإداري والتعليمي في المدرسة</p>
+</div>
+
+<!-- أيقونات رئيسية (كبيرة) -->
+<div class="grid grid--main">
+  <a class="card card--big" href="#admin">
+    <div class="card__icon">🗂️</div>
+    <div class="card__text">
+      <h4>الإدارة المدرسية</h4>
+      <p>خطط، لجان، تكليفات، تعاميم.</p>
+    </div>
+  </a>
+
+  <a class="card card--big" href="#teaching">
+    <div class="card__icon">📘</div>
+    <div class="card__text">
+      <h4>التعليم والتعلم</h4>
+      <p>مناهج، تطوير مهني، تحليل.</p>
+    </div>
+  </a>
+
+  <a class="card card--big" href="#outcomes">
+    <div class="card__icon">📊</div>
+    <div class="card__text">
+      <h4>نواتج التعلم</h4>
+      <p>تقارير، خطط، رضا المستفيد.</p>
+    </div>
+  </a>
+
+  <a class="card card--big" href="#environment">
+    <div class="card__icon">🏫</div>
+    <div class="card__text">
+      <h4>البيئة المدرسية</h4>
+      <p>مرافق، إخلاء، صيانة.</p>
+    </div>
+  </a>
+</div>
+
+<!-- عنوان بقية الخدمات -->
+<div class="icons-title icons-title--sub">
+  <h3>بقية الخدمات الإلكترونية</h3>
+  <p>خدمات داعمة وبرامج مساندة للطالبات ومنسوبات المدرسة</p>
+</div>
+
+<!-- باقي الأيقونات -->
+<div class="grid grid--normal">
+  <!-- بقية الأيقونات هنا -->
+
+    
+      <div class="grid">
+        <!-- صف 1 -->
+        <a class="card" href="#about">
+          <div class="card__icon">🏫</div>
+          <div class="card__text">
+            <h4>عن المدرسة</h4>
+            <p>الرؤية والرسالة، القيم، الهيكل.</p>
+          </div>
+        </a>
+
+        
+
+        <a class="card" href="#students">
+          <div class="card__icon">🎒</div>
+          <div class="card__text">
+            <h4>شؤون الطلاب</h4>
+            <p>الجداول، الزي، السلوك.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#staff">
+          <div class="card__icon">👩‍🏫</div>
+          <div class="card__text">
+            <h4>منسوبات المدرسة</h4>
+            <p>وصف وظيفي وجداول.</p>
+          </div>
+        </a>
+
+        <!-- صف 2 -->
+        <a class="card" href="#guidance">
+          <div class="card__icon">🧩</div>
+          <div class="card__text">
+            <h4>الإرشاد الطلابي</h4>
+            <p>خطط، حالات، سلوك.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#activity">
+          <div class="card__icon">🎨</div>
+          <div class="card__text">
+            <h4>النشاط الطلابي</h4>
+            <p>تقارير وخطط البرامج.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#awareness">
+          <div class="card__icon">🧠</div>
+          <div class="card__text">
+            <h4>الوعي الفكري</h4>
+            <p>توعية وبرامج وقائية.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#partners">
+          <div class="card__icon">🤝</div>
+          <div class="card__text">
+            <h4>الشراكات المجتمعية</h4>
+            <p>مبادرات وتقارير.</p>
+          </div>
+        </a>
+
+        <!-- صف 3 -->
+        
+
+        <a class="card" href="#elearning">
+          <div class="card__icon">🌐</div>
+          <div class="card__text">
+            <h4>التعلم الإلكتروني</h4>
+            <p>روابط المنصات والموارد.</p>
+          </div>
+        </a>
+
+        
+    
+
+        <!-- صف 4 -->
+        <a class="card" href="#discipline">
+          <div class="card__icon">⏱️</div>
+          <div class="card__text">
+            <h4>الانضباط المدرسي</h4>
+            <p>غياب وتحفيز وخطة.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#volunteer">
+          <div class="card__icon">🤍</div>
+          <div class="card__text">
+            <h4>الأعمال التطوعية</h4>
+            <p>مبادرات وتقارير.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#gifted">
+          <div class="card__icon">🌟</div>
+          <div class="card__text">
+            <h4>الموهوبين</h4>
+            <p>برامج وأنشطة.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#health">
+          <div class="card__icon">🩺</div>
+          <div class="card__text">
+            <h4>التوجيه الصحي</h4>
+            <p>خطة وبرامج.</p>
+          </div>
+        </a>
+
+        <!-- صف 5 -->
+        <a class="card" href="#news">
+          <div class="card__icon">📅</div>
+          <div class="card__text">
+            <h4>الأخبار والإعلانات</h4>
+            <p>آخر الأخبار والفعاليات.</p>
+          </div>
+        </a>
+
+        <a class="card" href="#contact">
+          <div class="card__icon">☎️</div>
+          <div class="card__text">
+            <h4>اتصل بنا</h4>
+            <p>الموقع والبريد والواتساب.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- أقسام تفاصيل (روابط) -->
+  <main class="section section--alt">
+    <div class="container twoCol">
+
+      <!-- عن المدرسة -->
+      <section id="about" class="panel">
+        <h3>عن المدرسة</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">الرؤية والرسالة</a></li>
+          <li><a href="#" target="_blank" rel="noopener">قيم المدرسة وأهدافها</a></li>
+<li><a href="org.html">الهيكل الإداري</a></li>
+          <li><a href="#" target="_blank" rel="noopener">نبذة عن المديرة</a></li>
+        </ul>
+      </section>
+
+      <!-- الإدارة المدرسية -->
+      <section id="admin" class="panel">
+        <h3>الإدارة المدرسية</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">الخطة التشغيلية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">المجالس واللجان</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الرخصة المهنية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">التكليفات وتوزيع المهام</a></li>
+          <li><a href="#" target="_blank" rel="noopener">النشرات الداخلية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الاجتماعات</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الميثاق الوظيفي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الأدلة والتعاميم</a></li>
+          <li><a href="#" target="_blank" rel="noopener">متابعة المعلمات</a></li>
+          <li><a href="#" target="_blank" rel="noopener">متابعة الكادر الإداري</a></li>
+        </ul>
+      </section>
+
+      <!-- شؤون الطلاب -->
+      <section id="students" class="panel">
+        <h3>شؤون الطلاب</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">الجداول الدراسية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الزي المدرسي</a></li>
+          <li>
+            <a href="https://www.saadalsahli.sa/wp-content/uploads/2025/08/1447.pdf" target="_blank" rel="noopener">
+              قواعد السلوك والمواظبة (PDF)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- منسوبات المدرسة -->
+      <section id="staff" class="panel">
+        <h3>منسوبات المدرسة</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">الوصف الوظيفي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">جداول الحصص</a></li>
+          <li><a href="#" target="_blank" rel="noopener">جدول المناوبة والإشراف اليومي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">جدول حصص الانتظار</a></li>
+        </ul>
+      </section>
+
+      <!-- الإرشاد الطلابي -->
+      <section id="guidance" class="panel">
+        <h3>الإرشاد الطلابي</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">الخطة الفصلية للإرشاد الطلابي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الحالات الفردية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">المخالفات السلوكية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">برامج النشاط الطلابي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">التحفيز والتكريم</a></li>
+          <li><a href="#" target="_blank" rel="noopener">مجلس الطالبات</a></li>
+          <li><a href="#" target="_blank" rel="noopener">مجلس أولياء الأمور</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تعزيز السلوك الإيجابي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">رصد السلوك المتميز (نظام نور)</a></li>
+        </ul>
+      </section>
+
+      <!-- النشاط الطلابي -->
+      <section id="activity" class="panel">
+        <h3>النشاط الطلابي</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">تقارير البرامج اللاصفية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تقارير جميع الفصول</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الخطة الفصلية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">نموذج متابعة أداء المدارس</a></li>
+        </ul>
+      </section>
+
+      <!-- الوعي الفكري -->
+      <section id="awareness" class="panel">
+        <h3>الوعي الفكري</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">برامج التوعية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">الأنشطة الوقائية</a></li>
+        </ul>
+      </section>
+
+      <!-- الشراكات -->
+      <section id="partners" class="panel">
+        <h3>الشراكات المجتمعية</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">مبادرات الشراكة</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تقارير الشراكات</a></li>
+        </ul>
+      </section>
+
+      <!-- التعليم والتعلم -->
+      <section id="teaching" class="panel">
+        <h3>التعليم والتعلم</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">توزيع المناهج</a></li>
+          <li><a href="#" target="_blank" rel="noopener">خطة التطوير المهني</a></li>
+          <li><a href="#" target="_blank" rel="noopener">التحصيل الدراسي (تشخيص/اختبارات/تحليل)</a></li>
+          <li><a href="#" target="_blank" rel="noopener">مهارات التفكير العليا</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تفعيل حصص الاحتياط والإتقان</a></li>
+        </ul>
+      </section>
+
+      <!-- التعلم الإلكتروني -->
+      <section id="elearning" class="panel">
+        <h3>التعلم الإلكتروني</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">رابط القسم الكامل</a></li>
+        </ul>
+      </section>
+
+      <!-- نواتج التعلم -->
+      <section id="outcomes" class="panel">
+        <h3>نواتج التعلم</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">تقرير التقويم الخارجي 2025</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تقرير نافس 2025</a></li>
+          <li><a href="#" target="_blank" rel="noopener">خطة التحسين</a></li>
+          <li><a href="#" target="_blank" rel="noopener">قياس رضا المستفيد</a></li>
+          <li><a href="#" target="_blank" rel="noopener">المبادرات</a></li>
+        </ul>
+      </section>
+
+      <!-- البيئة المدرسية -->
+      <section id="environment" class="panel">
+        <h3>البيئة المدرسية</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">مرافق المدرسة</a></li>
+          <li><a href="#" target="_blank" rel="noopener">رسم كروكي المدرسة</a></li>
+          <li><a href="#" target="_blank" rel="noopener">صورة نقطة التجمع</a></li>
+          <li><a href="#" target="_blank" rel="noopener">خطط الإخلاء</a></li>
+          <li><a href="#" target="_blank" rel="noopener">العلم المدرسي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">سجل الصيانة</a></li>
+          <li><a href="#" target="_blank" rel="noopener">سجل الدعم الموحد</a></li>
+        </ul>
+      </section>
+
+      <!-- الأعمال التطوعية -->
+      <section id="volunteer" class="panel">
+        <h3>الأعمال التطوعية</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">مبادرات تطوعية</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تقارير العمل التطوعي</a></li>
+        </ul>
+      </section>
+
+      <!-- الانضباط -->
+      <section id="discipline" class="panel">
+        <h3>الانضباط المدرسي</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">حصر الغياب الشهري للمعلمات</a></li>
+          <li><a href="#" target="_blank" rel="noopener">خطة الانضباط المدرسي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">حصر الغياب الشهري للطلاب والطالبات</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تحفيز المعلمات المنضبطات</a></li>
+          <li><a href="#" target="_blank" rel="noopener">تحفيز الطلاب المنضبطين</a></li>
+        </ul>
+      </section>
+
+      <!-- الموهوبين -->
+      <section id="gifted" class="panel">
+        <h3>الموهوبين</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">برامج رعاية الموهوبين</a></li>
+          <li><a href="#" target="_blank" rel="noopener">أنشطة الموهوبين</a></li>
+        </ul>
+      </section>
+
+      <!-- التوجيه الصحي -->
+      <section id="health" class="panel">
+        <h3>التوجيه الصحي</h3>
+        <ul class="links">
+          <li><a href="#" target="_blank" rel="noopener">الخطة الفصلية للتوجيه الصحي</a></li>
+          <li><a href="#" target="_blank" rel="noopener">برامج التوجيه الصحي</a></li>
+        </ul>
+      </section>
+
+      <!-- الأخبار -->
+      <section id="news" class="panel">
+        <h3>الأخبار والإعلانات</h3>
+        <div class="news">
+          <article class="news__main">
+            <div class="news__thumb">صورة خبر</div>
+            <div>
+              <h4>تحديثات المدرسة</h4>
+              <p class="muted">ضعي هنا خبرًا رسميًا مختصرًا…</p>
+              <a class="link" href="#">عرض التفاصيل</a>
+            </div>
+          </article>
+
+          <ul class="news__list">
+            <li><a href="#">فعالية مدرسية (ضع رابط)</a></li>
+            <li><a href="#">إعلان مهم (ضع رابط)</a></li>
+            <li><a href="#">خبر مختصر (ضع رابط)</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- اتصل بنا -->
+      <section id="contact" class="panel">
+        <h3>اتصل بنا</h3>
+        <div class="contact">
+          <div class="contact__item">
+            <span class="contact__label">📍 الموقع</span>
+            <span class="muted">عسير - الحرجة - محلاه</span>
+          </div>
+          <div class="contact__item">
+            <span class="contact__label">📧 البريد</span>
+            <a class="link" href="mailto:62932@asrg.moe.gov.sa">62932@asrg.moe.gov.sa</a>
+          </div>
+          <div class="contact__item">
+            <span class="contact__label">📞 التواصل</span>
+            <a class="link" href="tel:+966599955985">966599955985</a>
+          </div>
+          <div class="contact__item">
+            <span class="contact__label">💬 واتساب</span>
+            <a class="btn btn--wa" target="_blank" rel="noopener"
+               href="https://wa.me/966599955985">
+              فتح واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> ابتدائية محلاه والطفولة المبكرة — جميع الحقوق محفوظة</p>
+      <p class="muted">تم التصميم بأسلوب رسمي مودرن</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
