@@ -1,179 +1,146 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
   <title>ابتدائية محلاه والطفولة المبكرة</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+  let value = this.value.toLowerCase();
+  let cards = document.querySelectorAll('.card, .link-card, .quick-card');
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(value) ? "flex" : "none";
+  });
+});
+</script>
 
 <body>
-  <!-- شريط علوي صغير -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__right">
-        <span class="badge">وزارة التعليم</span>
-        <span class="muted">Ministry of Education</span>
-      </div>
-      <div class="topbar__left">
-        <a class="toplink" href="#contact">اتصل بنا</a>
-        <a class="toplink" href="#elearning">التعلم الإلكتروني</a>
+
+<header class="header">
+  <div class="container header__inner">
+    <div class="brand">
+      <div class="logo">🏫</div>
+      <div>
+        <h1>ابتدائية محلاه والطفولة المبكرة</h1>
+        <p class="muted">عسير – الحرجة – محلاه</p>
       </div>
     </div>
   </div>
-
-  <!-- الهيدر -->
-  <header class="header">
-    <div class="container header__inner">
-      <div class="brand">
-        <div class="logo">شعار</div>
-        <div class="brand__text">
-          <h1>ابتدائية محلاه والطفولة المبكرة</h1>
-          <p class="muted">عسير • الحرجة • محلاه</p>
-        </div>
-      </div>
-
-      <nav class="nav" aria-label="القائمة الرئيسية">
-        <button class="nav__toggle" aria-label="فتح القائمة" onclick="toggleMenu()">☰</button>
-        <ul id="navList" class="nav__list">
-          <li><a href="#home">الرئيسية</a></li>
-          <li><a href="#about">عن المدرسة</a></li>
-          <li><a href="#admin">الإدارة المدرسية</a></li>
-          <li><a href="#students">شؤون الطلاب</a></li>
-          <li><a href="#guidance">الإرشاد الطلابي</a></li>
-          <li><a href="#teaching">التعليم والتعلم</a></li>
-          <li><a href="#news">الأخبار</a></li>
-          <li><a href="#contact">اتصل بنا</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- البانر -->
-  <section id="home" class="hero">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <h2>نحو بيئة تعليمية محفّزة وآمنة</h2>
-        <p class="muted">
-          منصة المدرسة للخدمات، الأخبار، البرامج، وروابط الأدلة والنماذج بشكل منظم وسهل الوصول.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#icons">عرض الأيقونات</a>
-          <a class="btn btn--ghost" href="#news">آخر الأخبار</a>
-        </div>
-        <div class="hero__quick">
-          <a class="chip" href="https://www.saadalsahli.sa/wp-content/uploads/2025/08/1447.pdf" target="_blank" rel="noopener">
-            قواعد السلوك والمواظبة (PDF)
-          </a>
-          <a class="chip" href="#contact">واتساب المدرسة</a>
-        </div>
-      </div>
-
-      <div class="hero__media" aria-label="صورة المدرسة">
-        <!-- استبدلي الصورة لاحقًا -->
-        <div class="hero__image">
-          <span>صورة المدرسة</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- الأيقونات -->
-  <section id="icons" class="section">
-    <div class="container">
-        <!-- عنوان الأقسام الرئيسية -->
-<div class="icons-title">
-  <h3>الأقسام الرئيسية</h3>
-  <p>الأقسام المحورية التي تمثل جوهر العمل الإداري والتعليمي في المدرسة</p>
+</header>
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="بحث في الموقع...">
+  <span class="search-icon">🔍</span>
 </div>
 
-<!-- أيقونات رئيسية (كبيرة) -->
-<div class="grid grid--main">
-  <a class="card card--big" href="#admin">
-    <div class="card__icon">🗂️</div>
-    <div class="card__text">
-      <h4>الإدارة المدرسية</h4>
-      <p>خطط، لجان، تكليفات، تعاميم.</p>
+<!-- HERO: صورة المدرسة + ترحيب -->
+<section class="hero">
+  <div class="container hero__inner">
+
+    <!-- يمين: صورة المدرسة -->
+    <div class="hero__media">
+      <img src="school.jpg" alt="صورة المدرسة">
     </div>
-  </a>
 
-  <a class="card card--big" href="#teaching">
-    <div class="card__icon">📘</div>
-    <div class="card__text">
-      <h4>التعليم والتعلم</h4>
-      <p>مناهج، تطوير مهني، تحليل.</p>
+    <!-- يسار: 4 بطاقات -->
+    <div class="hero__quick">
+      <a class="quick-card" target="_blank" rel="noopener"
+         href="https://drive.google.com/drive/folders/115baw7GXGjaIRsroUt3xoIriD9YKKPV3">
+        <div class="quick-icon">📊</div>
+        <div class="quick-text">
+          <h4>تقرير التقويم الخارجي 2025</h4>
+          <p>فتح الملف</p>
+        </div>
+      </a>
+
+      <a class="quick-card" target="_blank" rel="noopener"
+         href="https://drive.google.com/drive/folders/1BecC9LjbyJvCD1m8dfaXd-4W3v81eG3T">
+        <div class="quick-icon">🧪</div>
+        <div class="quick-text">
+          <h4>تقرير نافس 2025</h4>
+          <p>فتح الملف</p>
+        </div>
+      </a>
+
+      <a class="quick-card" target="_blank" rel="noopener"
+         href="https://drive.google.com/drive/folders/1sM_Dik2Y_8n7Z_9HR0Lon8sK6RLi1zKj">
+        <div class="quick-icon">📁</div>
+        <div class="quick-text">
+          <h4>الخطة الفصلية للمدرسة</h4>
+          <p>فتح الخطة</p>
+        </div>
+      </a>
+
+      <a class="quick-card quick-card--wa" target="_blank" rel="noopener"
+         href="https://wa.me/966599955985">
+        <div class="quick-icon">💬</div>
+        <div class="quick-text">
+          <h4>التواصل واتساب</h4>
+          <p>إدارة المدرسة</p>
+        </div>
+      </a>
     </div>
-  </a>
 
-  <a class="card card--big" href="#outcomes">
-    <div class="card__icon">📊</div>
-    <div class="card__text">
-      <h4>نواتج التعلم</h4>
-      <p>تقارير، خطط، رضا المستفيد.</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- الأقسام الرئيسية -->
+    <div class="icons-title">
+      <h3>الأقسام الرئيسية</h3>
+      <p>الأقسام المحورية التي تمثل جوهر العمل الإداري والتعليمي في المدرسة</p>
     </div>
-  </a>
 
-  <a class="card card--big" href="#environment">
-    <div class="card__icon">🏫</div>
-    <div class="card__text">
-      <h4>البيئة المدرسية</h4>
-      <p>مرافق، إخلاء، صيانة.</p>
+    <div class="grid grid--main">
+      <a class="card card--big" href="#sec-admin">
+        <div class="card__icon">🗂️</div>
+        <div class="card__text">
+          <h4>الإدارة المدرسية</h4>
+          <p>خطط – لجان – تكليفات – تعاميم</p>
+        </div>
+      </a>
+
+      <a class="card card--big" href="#sec-teaching">
+        <div class="card__icon">📘</div>
+        <div class="card__text">
+          <h4>التعليم والتعلم</h4>
+          <p>مناهج – تطوير مهني – تحليل</p>
+        </div>
+      </a>
+
+      <a class="card card--big" href="#sec-outcomes">
+        <div class="card__icon">📊</div>
+        <div class="card__text">
+          <h4>نواتج التعلم</h4>
+          <p>تقارير – تحسين – رضا المستفيد</p>
+        </div>
+      </a>
+
+      <a class="card card--big" href="#sec-environment">
+        <div class="card__icon">🏫</div>
+        <div class="card__text">
+          <h4>البيئة المدرسية</h4>
+          <p>مرافق – أمن وسلامة – صيانة</p>
+        </div>
+      </a>
     </div>
-  </a>
-</div>
 
-<!-- عنوان بقية الخدمات -->
-<div class="icons-title icons-title--sub">
-  <h3>بقية الخدمات الإلكترونية</h3>
-  <p>خدمات داعمة وبرامج مساندة للطالبات ومنسوبات المدرسة</p>
-</div>
+    <!-- بقية الخدمات -->
+    <div class="icons-title icons-title--sub">
+      <h3>بقية الخدمات الإلكترونية</h3>
+      <p>خدمات داعمة وبرامج مساندة للطالبات ومنسوبات المدرسة</p>
+    </div>
 
-<!-- باقي الأيقونات -->
-<div class="grid grid--normal">
-  <!-- بقية الأيقونات هنا -->
+    <div class="grid grid--normal">
 
-    
-      <div class="grid">
-        <!-- صف 1 -->
-        <a class="card" href="#about">
-          <div class="card__icon">🏫</div>
-          <div class="card__text">
-            <h4>عن المدرسة</h4>
-            <p>الرؤية والرسالة، القيم، الهيكل.</p>
-          </div>
-        </a>
-
-        
-
-        <a class="card" href="#students">
-          <div class="card__icon">🎒</div>
-          <div class="card__text">
-            <h4>شؤون الطلاب</h4>
-            <p>الجداول، الزي، السلوك.</p>
-          </div>
-        </a>
-
-        <a class="card" href="#staff">
-          <div class="card__icon">👩‍🏫</div>
-          <div class="card__text">
-            <h4>منسوبات المدرسة</h4>
-            <p>وصف وظيفي وجداول.</p>
-          </div>
-        </a>
-
-        <!-- صف 2 -->
-        <a class="card" href="#guidance">
-          <div class="card__icon">🧩</div>
-          <div class="card__text">
-            <h4>الإرشاد الطلابي</h4>
-            <p>خطط، حالات، سلوك.</p>
-          </div>
-        </a>
-
-        <a class="card" href="#activity">
+      <a class="card" href="#activity">
           <div class="card__icon">🎨</div>
           <div class="card__text">
             <h4>النشاط الطلابي</h4>
@@ -181,333 +148,696 @@
           </div>
         </a>
 
-        <a class="card" href="#awareness">
-          <div class="card__icon">🧠</div>
-          <div class="card__text">
-            <h4>الوعي الفكري</h4>
-            <p>توعية وبرامج وقائية.</p>
-          </div>
-        </a>
 
-        <a class="card" href="#partners">
-          <div class="card__icon">🤝</div>
-          <div class="card__text">
-            <h4>الشراكات المجتمعية</h4>
-            <p>مبادرات وتقارير.</p>
-          </div>
-        </a>
+      <a class="card" href="#about">
+        <div class="card__icon">🏠</div>
+        <div class="card__text">
+          <h4>عن المدرسة</h4>
+          <p>الرؤية – الرسالة – القيم – الأهداف</p>
+        </div>
+      </a>
 
-        <!-- صف 3 -->
-        
+      <a class="card" href="#students">
+        <div class="card__icon">🎒</div>
+        <div class="card__text">
+          <h4>شؤون الطلاب</h4>
+          <p>جداول – خطط أسبوعية – سلوك</p>
+        </div>
+      </a>
 
-        <a class="card" href="#elearning">
-          <div class="card__icon">🌐</div>
-          <div class="card__text">
-            <h4>التعلم الإلكتروني</h4>
-            <p>روابط المنصات والموارد.</p>
-          </div>
-        </a>
+      <a class="card" href="#guidance">
+        <div class="card__icon">🧩</div>
+        <div class="card__text">
+          <h4>التوجيه الطلابي</h4>
+          <p>خطط – حالات – سلوك – مجالس</p>
+        </div>
+      </a>
 
-        
+      <a class="card" href="#gifted">
+        <div class="card__icon">🌟</div>
+        <div class="card__text">
+          <h4>الموهوبين</h4>
+          <p>برامج – تقارير – شواهد</p>
+        </div>
+      </a>
+
+      <!-- الوعي الفكري: رابط مباشر فقط -->
+      <a class="card" target="_blank" rel="noopener"
+         href="https://drive.google.com/drive/folders/1dpnRB4dqdk37xnfCM1sn9JXYkJM7IVgh">
+        <div class="card__icon">🧠</div>
+        <div class="card__text">
+          <h4>الوعي الفكري</h4>
+          <p>ملفات وبرامج توعوية</p>
+        </div>
+      </a>
+
+      <a class="card" href="#health">
+        <div class="card__icon">🩺</div>
+        <div class="card__text">
+          <h4>التوجيه الصحي</h4>
+          <p>خطة – برامج – نماذج</p>
+        </div>
+      </a>
+
+      <a class="card" href="#staff">
+        <div class="card__icon">👩‍🏫</div>
+        <div class="card__text">
+          <h4>منسوبات المدرسة</h4>
+          <p>أسماء منسوبات المدرسة</p>
+        </div>
+      </a>
+
+      <!-- التعليم الإلكتروني -->
+      <a class="card" target="_blank" rel="noopener"
+         href="https://drive.google.com/drive/folders/1ix7j2TVoJnzVM4tlJ1FbNcGzhh0LPMyb">
+        <div class="card__icon">🌐</div>
+        <div class="card__text">
+          <h4>التعليم الإلكتروني</h4>
+          <p>روابط المنصات والموارد</p>
+        </div>
+      </a>
+
+      <!-- الانضباط المدرسي -->
+      <a class="card" href="#discipline">
+        <div class="card__icon">⏱️</div>
+        <div class="card__text">
+          <h4>الانضباط المدرسي</h4>
+          <p>غياب – خطة – تحفيز</p>
+        </div>
+      </a>
+
+      <a class="card" href="#contact">
+        <div class="card__icon">☎️</div>
+        <div class="card__text">
+          <h4>اتصل بنا</h4>
+          <p>الموقع – البريد – الواتساب</p>
+        </div>
+      </a>
+
+    </div>
+
     
+    <!-- ========================= -->
+    <!-- الإدارة المدرسية -->
+    <!-- ========================= -->
+     
+    <section id="sec-admin" class="section section--inner">
+  <div class="section-head">
+    <h3>الإدارة المدرسية</h3>
+    <p class="muted">اضغطي على أي بند لفتح الرابط في Google Drive</p>
+  </div>
 
-        <!-- صف 4 -->
-        <a class="card" href="#discipline">
-          <div class="card__icon">⏱️</div>
-          <div class="card__text">
-            <h4>الانضباط المدرسي</h4>
-            <p>غياب وتحفيز وخطة.</p>
-          </div>
+  <div class="link-grid">
+    <!-- الخطة التشغيلية (ملف) -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1LrWt9Vdy9exsTe3D6SU5TyDVOsl3knXo/view?usp=drivesdk">
+      <span>الخطة التشغيلية</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- المجالس واللجان -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1kypr5fFPIFaSHOLz6j0Mo30toqZtmiCq">
+      <span>المجالس واللجان</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- الرخصة المهنية -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1PoKjPWaaE8gjKCe4i_jmDMiJnZ3aVKM5">
+      <span>الرخصة المهنية</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- التكليفات وتوزيع المهام -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1nFFxPzEjrMmp7BNshc0iaWq8r5bQ19nm">
+      <span>التكليفات وتوزيع المهام</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- النشرات الداخلية -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1nzC48SnwCjIVZA6ztPvbfWZe3CDTTQby">
+      <span>النشرات الداخلية</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- الميثاق الوظيفي -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1Hpz-WWJuIRVB8jhANj-6BOpg2UVLKEbE">
+      <span>الميثاق الوظيفي</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- اطلاع منسوبي المدرسة على ما يرد من تعاميم -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1VMuV6-bpMA-ClUNZale3cS69w3xRSJ_L">
+      <span>اطلاع منسوبي المدرسة على ما يرد من تعاميم</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- متابعة الكادر الإداري -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1gJIPX76VWJqxDUVwC5afcxuUSAbLWS_A">
+      <span>متابعة الكادر الإداري</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- بنود لم يصل رابطها بعد -->
+    <a class="link-card" target="_blank" rel="noopener" href="#">
+      <span>الاجتماعات</span>
+      <small>بانتظار الرابط</small>
+    </a>
+
+    <a class="link-card" target="_blank" rel="noopener" href="#">
+      <span>متابعة المعلمات</span>
+      <small>بانتظار الرابط</small>
+    </a>
+  </div>
+</section>
+
+
+    <!-- ========================= -->
+    <!-- التعليم والتعلم -->
+    <!-- ========================= -->
+    <section id="sec-teaching" class="section section--inner">
+      <div class="section-head">
+        <h3>التعليم والتعلم</h3>
+        <p class="muted">روابط Drive للقسم</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1SFTJutqE6QF0_HeEJE0bLjzCEGY5emdR">
+          <span>توزيع المناهج</span><small>Drive</small>
         </a>
 
-        <a class="card" href="#volunteer">
-          <div class="card__icon">🤍</div>
-          <div class="card__text">
-            <h4>الأعمال التطوعية</h4>
-            <p>مبادرات وتقارير.</p>
-          </div>
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1BLcU9m1u3oFdHGmmyDWtz4MGxrjH0Jmq">
+          <span>خطة التطوير المهني</span><small>Drive</small>
         </a>
 
-        <a class="card" href="#gifted">
-          <div class="card__icon">🌟</div>
-          <div class="card__text">
-            <h4>الموهوبين</h4>
-            <p>برامج وأنشطة.</p>
-          </div>
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1AxdUt-eHuao7DBLshTak5Lg-j33THSbL">
+          <span>التحصيل الدراسي</span><small>Drive</small>
         </a>
 
-        <a class="card" href="#health">
-          <div class="card__icon">🩺</div>
-          <div class="card__text">
-            <h4>التوجيه الصحي</h4>
-            <p>خطة وبرامج.</p>
-          </div>
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1FLoyZ95S3txB-rcqX-H3f9vXEuq7dW1F">
+          <span>مهارات التفكير العليا</span><small>Drive</small>
         </a>
 
-        <!-- صف 5 -->
-        <a class="card" href="#news">
-          <div class="card__icon">📅</div>
-          <div class="card__text">
-            <h4>الأخبار والإعلانات</h4>
-            <p>آخر الأخبار والفعاليات.</p>
-          </div>
-        </a>
-
-        <a class="card" href="#contact">
-          <div class="card__icon">☎️</div>
-          <div class="card__text">
-            <h4>اتصل بنا</h4>
-            <p>الموقع والبريد والواتساب.</p>
-          </div>
+        <a class="link-card" target="_blank" rel="noopener" 
+        href="https://drive.google.com/drive/folders/1FLoyZ95S3txB-rcqX-H3f9vXEuq7dW1F">
+          <span>تفعيل حصص الاحتياط والانتظار</span><small>Drive</small>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- أقسام تفاصيل (روابط) -->
-  <main class="section section--alt">
-    <div class="container twoCol">
-
-      <!-- عن المدرسة -->
-      <section id="about" class="panel">
-        <h3>عن المدرسة</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">الرؤية والرسالة</a></li>
-          <li><a href="#" target="_blank" rel="noopener">قيم المدرسة وأهدافها</a></li>
-<li><a href="org.html">الهيكل الإداري</a></li>
-          <li><a href="#" target="_blank" rel="noopener">نبذة عن المديرة</a></li>
-        </ul>
-      </section>
-
-      <!-- الإدارة المدرسية -->
-      <section id="admin" class="panel">
-        <h3>الإدارة المدرسية</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">الخطة التشغيلية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">المجالس واللجان</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الرخصة المهنية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">التكليفات وتوزيع المهام</a></li>
-          <li><a href="#" target="_blank" rel="noopener">النشرات الداخلية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الاجتماعات</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الميثاق الوظيفي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الأدلة والتعاميم</a></li>
-          <li><a href="#" target="_blank" rel="noopener">متابعة المعلمات</a></li>
-          <li><a href="#" target="_blank" rel="noopener">متابعة الكادر الإداري</a></li>
-        </ul>
-      </section>
-
-      <!-- شؤون الطلاب -->
-      <section id="students" class="panel">
-        <h3>شؤون الطلاب</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">الجداول الدراسية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الزي المدرسي</a></li>
-          <li>
-            <a href="https://www.saadalsahli.sa/wp-content/uploads/2025/08/1447.pdf" target="_blank" rel="noopener">
-              قواعد السلوك والمواظبة (PDF)
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <!-- منسوبات المدرسة -->
-      <section id="staff" class="panel">
-        <h3>منسوبات المدرسة</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">الوصف الوظيفي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">جداول الحصص</a></li>
-          <li><a href="#" target="_blank" rel="noopener">جدول المناوبة والإشراف اليومي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">جدول حصص الانتظار</a></li>
-        </ul>
-      </section>
-
-      <!-- الإرشاد الطلابي -->
-      <section id="guidance" class="panel">
-        <h3>الإرشاد الطلابي</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">الخطة الفصلية للإرشاد الطلابي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الحالات الفردية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">المخالفات السلوكية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">برامج النشاط الطلابي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">التحفيز والتكريم</a></li>
-          <li><a href="#" target="_blank" rel="noopener">مجلس الطالبات</a></li>
-          <li><a href="#" target="_blank" rel="noopener">مجلس أولياء الأمور</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تعزيز السلوك الإيجابي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">رصد السلوك المتميز (نظام نور)</a></li>
-        </ul>
-      </section>
-
-      <!-- النشاط الطلابي -->
-      <section id="activity" class="panel">
-        <h3>النشاط الطلابي</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">تقارير البرامج اللاصفية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تقارير جميع الفصول</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الخطة الفصلية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">نموذج متابعة أداء المدارس</a></li>
-        </ul>
-      </section>
-
-      <!-- الوعي الفكري -->
-      <section id="awareness" class="panel">
-        <h3>الوعي الفكري</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">برامج التوعية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">الأنشطة الوقائية</a></li>
-        </ul>
-      </section>
-
-      <!-- الشراكات -->
-      <section id="partners" class="panel">
-        <h3>الشراكات المجتمعية</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">مبادرات الشراكة</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تقارير الشراكات</a></li>
-        </ul>
-      </section>
-
-      <!-- التعليم والتعلم -->
-      <section id="teaching" class="panel">
-        <h3>التعليم والتعلم</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">توزيع المناهج</a></li>
-          <li><a href="#" target="_blank" rel="noopener">خطة التطوير المهني</a></li>
-          <li><a href="#" target="_blank" rel="noopener">التحصيل الدراسي (تشخيص/اختبارات/تحليل)</a></li>
-          <li><a href="#" target="_blank" rel="noopener">مهارات التفكير العليا</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تفعيل حصص الاحتياط والإتقان</a></li>
-        </ul>
-      </section>
-
-      <!-- التعلم الإلكتروني -->
-      <section id="elearning" class="panel">
-        <h3>التعلم الإلكتروني</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">رابط القسم الكامل</a></li>
-        </ul>
-      </section>
-
-      <!-- نواتج التعلم -->
-      <section id="outcomes" class="panel">
+    <!-- ========================= -->
+    <!-- نواتج التعلم -->
+    <!-- ========================= -->
+    <section id="sec-outcomes" class="section section--inner">
+      <div class="section-head">
         <h3>نواتج التعلم</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">تقرير التقويم الخارجي 2025</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تقرير نافس 2025</a></li>
-          <li><a href="#" target="_blank" rel="noopener">خطة التحسين</a></li>
-          <li><a href="#" target="_blank" rel="noopener">قياس رضا المستفيد</a></li>
-          <li><a href="#" target="_blank" rel="noopener">المبادرات</a></li>
-        </ul>
-      </section>
+        <p class="muted">تم ترتيب البنود بدون تكرار</p>
+      </div>
 
-      <!-- البيئة المدرسية -->
-      <section id="environment" class="panel">
-        <h3>البيئة المدرسية</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">مرافق المدرسة</a></li>
-          <li><a href="#" target="_blank" rel="noopener">رسم كروكي المدرسة</a></li>
-          <li><a href="#" target="_blank" rel="noopener">صورة نقطة التجمع</a></li>
-          <li><a href="#" target="_blank" rel="noopener">خطط الإخلاء</a></li>
-          <li><a href="#" target="_blank" rel="noopener">العلم المدرسي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">سجل الصيانة</a></li>
-          <li><a href="#" target="_blank" rel="noopener">سجل الدعم الموحد</a></li>
-        </ul>
-      </section>
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/115baw7GXGjaIRsroUt3xoIriD9YKKPV3">
+          <span>تقرير التقويم الخارجي 2025</span><small>Drive</small>
+        </a>
 
-      <!-- الأعمال التطوعية -->
-      <section id="volunteer" class="panel">
-        <h3>الأعمال التطوعية</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">مبادرات تطوعية</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تقارير العمل التطوعي</a></li>
-        </ul>
-      </section>
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1BecC9LjbyJvCD1m8dfaXd-4W3v81eG3T">
+          <span>تقرير نافس لعام 2025</span><small>Drive</small>
+        </a>
 
-      <!-- الانضباط -->
-      <section id="discipline" class="panel">
-        <h3>الانضباط المدرسي</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">حصر الغياب الشهري للمعلمات</a></li>
-          <li><a href="#" target="_blank" rel="noopener">خطة الانضباط المدرسي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">حصر الغياب الشهري للطلاب والطالبات</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تحفيز المعلمات المنضبطات</a></li>
-          <li><a href="#" target="_blank" rel="noopener">تحفيز الطلاب المنضبطين</a></li>
-        </ul>
-      </section>
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1sM_Dik2Y_8n7Z_9HR0Lon8sK6RLi1zKj">
+          <span>خطة التحسين</span><small>Drive</small>
+        </a>
 
-      <!-- الموهوبين -->
-      <section id="gifted" class="panel">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1WLwOt9c8ybwWNwQM5-PXIGhWue2BW-50">
+          <span>قياس رضا المستفيد</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1ehaqiatrWMrcpA07fDVNaG_iwQWxywHm">
+          <span>المبادرات</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+
+
+
+    <section id="sec-outcomes" class="section section--inner">
+      <div class="section-head">
+        <h3>النشاط الطلابي</h3>
+        <p class="muted">تم ترتيب البنود بدون تكرار</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1KpF1TE2-8e27v7uRTwEobY-ZqCTNNhFs">
+          <span>تقراير البرامج اللاصفية</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/18ykrjtztXibyLNbo0lR6YldMCPPWi8PT">
+          <span>تقارير جميع الفصول </span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1jGoETeMsrc732s1QXaBLVZJQ5oEN8EKb">
+          <span>الخطة الفصلية للنشاط الطلابي </span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1lUTZT9dw3UiU_hPb_av0n6x6o7Y1U77M">
+          <span>نموذج متابعة اداء المدارس </span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1THxBAfB-xnCwE2UpJa24ykqmQFtbQSRZ">
+          <span>تقارير رائدة النشاط</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+    <!-- ========================= -->
+    <!-- البيئة المدرسية -->
+    <!-- ========================= -->
+    <section id="sec-environment" class="section section--inner">
+  <div class="section-head">
+    <h3>البيئة المدرسية</h3>
+    <p class="muted">مرافق المدرسة والأمن والسلامة وخطط الإخلاء</p>
+  </div>
+
+  <div class="link-grid">
+
+    <!-- الأمن والسلامة -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1Enev5oFqqrRAuMVNC9Zu7qTynZgLDpYN">
+      <span>الأمن والسلامة</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- مرافق المدرسة -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/16rIZU0h4i5n88u2cCmeEWpx18Q1kD0cj">
+      <span>مرافق المدرسة</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- رسم كروكي المدرسة -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/18zqtsRUGFIprks0KTXpun2seEvDIIpd6">
+      <span>رسم كروكي للمدرسة</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- خطط الإخلاء -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1UcUEcmCHpAtuAukRCNNwkI55xoZPUq4-">
+      <span>خطط الإخلاء</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- العلم المدرسي -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1V4bbs8VoQkNi0LLse2pe_VVlH1nN_Cym">
+      <span>العلم المدرسي</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- سجل الصيانة -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/14SePTvngVuXMbfzDqisiKEY0OnYYZZI7">
+      <span>سجل الصيانة</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- سجل الدعم الموحد -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1an5v4U37Md5UzI7JJxJSGV0agUwhs9Al">
+      <span>سجل الدعم الموحد</span>
+      <small>Drive Folder</small>
+    </a>
+
+  
+
+        <a class="link-card" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1Uxd41ujuKtoRkAJ_xG0SbxBZKNqClfdK">
+          <span>المقصف المدرسي</span><small>Drive Folder</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1QOtNzHYt3POiqibGJezHWJ_VKhnRYMjG">
+          <span>سجل جرد العهد</span><small>Drive Folder</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- شؤون الطلاب -->
+    <!-- ========================= -->
+    <section id="students" class="section section--inner">
+      <div class="section-head">
+        <h3>شؤون الطلاب</h3>
+        <p class="muted">روابط Drive للقسم</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1GD2Uv84HtGRbSbK18_HEzzwguBoRzKzb">
+          <span>الخطط الأسبوعية</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1JcWvx8Ncb1vMAo-uahTtcfl45MsPt2lX">
+          <span>الجداول الدراسية</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1odYrqDVFsw7n5Pj5nVfvuhk3-WdcVPhN">
+          <span>قواعد السلوك والمواظبة</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1pLBtmAsNvHuiKM7r-ThhhtXFdQ03aaQj">
+          <span>الزي المدرسي</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- الإرشاد الطلابي -->
+    <!-- ========================= -->
+    <section id="guidance" class="section section--inner">
+      <div class="section-head">
+        <h3>التوجيه الطلابي</h3>
+        <p class="muted">تم تعديل البنود حسب توجيهك</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/19B9ScNAJH9dI1lHN1rL_Yke-MPvnmBH1">
+          <span>الخطة الفصلية للإرشاد الطلابي</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1fXd05mA60JDf7HtgSkt7ieugbgbUuBYi">
+          <span>الحالات الفردية</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1Uned3gfCcDCNfp-5e2x4Nm-5KZLyvOXm">
+          <span>برامج النشاط الطلابي</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1Uned3gfCcDCNfp-5e2x4Nm-5KZLyvOXm">
+          <span>التحفيز والتكريم</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/15CAV2iwThoOvCkSLn7pGIEdKFZjME88D">
+          <span>مجالس الطلاب</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1UoIYaEKkRvDBN3zrpLIZ3m8AgT0gAXF9">
+          <span>التواصل مع أولياء الأمور</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1meXJc4Nlo9kLlCtP0J0LeUM8LAxiZ8Cf">
+          <span>مجالس أولياء الأمور</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1uuWE9maMYEIxMhSIeYCMRYeDJpYRqeaJ">
+          <span> تعزيز السلوك الايجابي</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/11VlU1a0o0jH4acabPe-3ruf6F8OyHlI2">
+          <span>رصد السلوك المتميز</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- الموهوبين -->
+    <!-- ========================= -->
+    <section id="gifted" class="section section--inner">
+      <div class="section-head">
         <h3>الموهوبين</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">برامج رعاية الموهوبين</a></li>
-          <li><a href="#" target="_blank" rel="noopener">أنشطة الموهوبين</a></li>
+        <p class="muted">تم إدخال الأربعة بنود</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1E7bktOf80ybvDSS9aQ6dPPLXg_5NHH6y">
+          <span>البرنامج الوطني للكشف عن الموهوبين</span><small>Drive</small>
+        </a>
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1XTN0MsSBhW8aAuTvSOeZLbqWfBl49P80">
+          <span>سجل منسقة الموهوبين</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1Jo1OyuYVPR7B_N6XwG2FCKPy7F6kY9VL">
+          <span>تقارير البرامج والمبادرات المنفذة</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1yrab-taUi9ghmKl7GjMyNH9wDuRoDf07">
+          <span>شواهد السابقات</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- التوجيه الصحي -->
+    <!-- ========================= -->
+    <section id="health" class="section section--inner">
+  <div class="section-head">
+    <h3>التوجيه الصحي</h3>
+    <p class="muted">برامج التوعية الصحية وخطط السلامة المدرسية</p>
+  </div>
+
+  <div class="link-grid">
+
+    <!-- الخطة الفصلية للتوجيه الصحي -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1HWiRi3EIyABLmQtVjgifojsqXP-XHH9_">
+      <span>الخطة الفصلية للتوجيه الصحي</span>
+      <small>Drive Folder</small>
+    </a>
+
+    <!-- تقارير البرامج -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/drive/folders/1PwQ9BGudQnrzQU12IjmY4Gz7ine4kZcq">
+      <span>تقارير البرامج</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- البرامج والفعاليات -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1JmvKhkTtFt2qkfp2J2F51SIN3CiwF1e2/view?usp=drivesdk">
+      <span>البرامج والفعاليات</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- التعامل مع الحالات المعدية -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1X2m8FPXn4BC_OJx3q5dXiNIQHlA7p3E2/view?usp=drivesdk">
+      <span>التعامل مع الحالات المعدية</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- الخطة المشتركة للعام 1447 -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1PG1AnTnehUV88SobcCghevLj-8AffkzN/view?usp=drivesdk">
+      <span>الخطة المشتركة للعام 1447</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- مرفقات إضافية -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1eBGtDxxkSYnZYdVYGMOaktVXTS6cxhXy/view?usp=drivesdk">
+      <span>الدليل الارشادي لتطبيق برنامج اصدقاءالسلامة</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- توزيع البرامج الصحية للفصل الأول 1447 -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1q8TC5py7wNzBrjSE4PZOdn9sf9lRKJSN/view?usp=drivesdk">
+      <span>توزيع البرامج الصحية للفصل الأول 1447</span>
+      <small>Drive File</small>
+    </a>
+
+    <!-- مرفقات إضافية -->
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1lSf924fpXZeuScewWB49aZUuqz3KnBy8/view?usp=drivesdk">
+      <span>دليل الفحص الإستكشافي</span>
+      <small>Drive File</small>
+    </a>
+
+    <a class="link-card" target="_blank" rel="noopener"
+       href="https://drive.google.com/file/d/1DtE4pKv2j3bJYwozl7KJamMSjG7-WRJ4/view?usp=drivesdk">
+      <span>دليل تفعيل محتوى توعوي لحملة سرطان الثدي</span>
+      <small>Drive File</small>
+    </a>
+
+  </div>
+</section>
+
+
+    <!-- ========================= -->
+    <!-- منسوبات المدرسة -->
+    <!-- ========================= -->
+    <section id="staff" class="section section--inner">
+      <div class="section-head">
+        <h3>منسوبات المدرسة</h3>
+        <p class="muted">أيقونة مخصصة للأسماء</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/13txgBVk95beT2Wg0iNosL5uh0jw4-egA">
+          <span>أسماء منسوبات المدرسة</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1Jp07AxSNQgeolhkUsyOyo4qf1K7BGxez">
+          <span>الوصف الوظيفي</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/file/d/1BqZGvjIlTF0WmRa7BkcCXcq2VctCDUU7/view?usp=drivesdk">
+          <span>الجدول العام للحصص</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/file/d/10qqjl9rnhnLHNIflgLgxIqOxzophcqTK/view?usp=drivesdk">
+          <span>المناوبة اليومية والاشراف</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/file/d/1nqpovIG3iLhDtrujOLqeI3uwWK1Byi43/view?usp=drivesdk">
+          <span>جداول المعلمات</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/file/d/1hPhkiKwOKZabKyOxAyY10-Dyja8dStoW/view?usp=drivesdk">
+          <span>جدول الانتظار</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- الانضباط المدرسي -->
+    <!-- ========================= -->
+    <section id="discipline" class="section section--inner">
+      <div class="section-head">
+        <h3>الانضباط المدرسي</h3>
+        <p class="muted">روابط Drive للقسم</p>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1NeK6kmwv1im5m7rdhnlWsJquHtP3PpDj">
+          <span>خطة المدرسه في الانضباط المدرسي </span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1eF6eOCNQuwvEyGLuaEuENrutjpvlOxnk">
+          <span>حصر الغياب الشهري للمعلمات</span><small>Drive</small>
+        </a>
+
+      
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1OEV0jkuWNHtmC99xhRrACQ7-P1E42aJu">
+          <span>حصر الغياب الشهري للطلاب والطالبات</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://drive.google.com/drive/folders/1tUoT4CGxdTkR2luQBbTBbrZGpi70ql5L">
+          <span>تحفيز المعلمات المنضبطات</span><small>Drive</small>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1Oyf1p-1Cy_e2KFSnTHuRoerOUOxrA8rw">
+          <span>تحفيز الطلاب المنضبطين</span><small>Drive</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- عن المدرسة -->
+    <!-- ========================= -->
+    <section id="about" class="section section--inner">
+      <div class="section-head">
+        <h3>عن المدرسة</h3>
+        <p class="muted">القيم والأهداف مضافة كنص</p>
+      </div>
+
+      <div class="text-box">
+        <h4>قيم المدرسة</h4>
+        <ul>
+          <li><b>الانتماء الوطني:</b> تعزيز حب الوطن والاعتزاز بقيمه وثقافته.</li>
+          <li><b>المسؤولية:</b> تحمل المسؤولية الفردية والجماعية والالتزام بالواجبات.</li>
+          <li><b>الاحترام:</b> احترام الذات والآخرين والأنظمة المدرسية.</li>
+          <li><b>الانضباط:</b> الالتزام بالأنظمة والتعليمات وتحقيق الجدية في العمل.</li>
+          <li><b>التعاون:</b> تعزيز روح العمل الجماعي والشراكة الفاعلة.</li>
+          <li><b>الإتقان والجودة:</b> السعي نحو التميز وتحقيق أعلى مستويات الأداء.</li>
+          <li><b>النزاهة:</b> الالتزام بالأمانة والصدق في جميع التعاملات.</li>
         </ul>
-      </section>
 
-      <!-- التوجيه الصحي -->
-      <section id="health" class="panel">
-        <h3>التوجيه الصحي</h3>
-        <ul class="links">
-          <li><a href="#" target="_blank" rel="noopener">الخطة الفصلية للتوجيه الصحي</a></li>
-          <li><a href="#" target="_blank" rel="noopener">برامج التوجيه الصحي</a></li>
+        <h4>أهداف المدرسة</h4>
+        <ul>
+          <li>توفير بيئة تعليمية آمنة ومحفزة ومراعية للفروق الفردية.</li>
+          <li>تنمية المهارات الأساسية لدى الطالبات (القراءة، الكتابة، الحساب).</li>
+          <li>غرس القيم والأخلاق الحميدة والسلوك الإيجابي.</li>
+          <li>تعزيز حب التعلم وتنمية الدافعية نحو المدرسة.</li>
+          <li>تنمية مهارات التفكير والإبداع وحل المشكلات.</li>
+          <li>دعم النمو النفسي والاجتماعي للطالبة.</li>
+          <li>توظيف التقنيات التعليمية بما يخدم العملية التعليمية.</li>
+          <li>تعزيز الشراكة مع الأسرة في متابعة تعلم الطالبات.</li>
+          <li>اكتشاف الميول والقدرات وتنميتها في المراحل المبكرة.</li>
         </ul>
-      </section>
 
-      <!-- الأخبار -->
-      <section id="news" class="panel">
-        <h3>الأخبار والإعلانات</h3>
-        <div class="news">
-          <article class="news__main">
-            <div class="news__thumb">صورة خبر</div>
-            <div>
-              <h4>تحديثات المدرسة</h4>
-              <p class="muted">ضعي هنا خبرًا رسميًا مختصرًا…</p>
-              <a class="link" href="#">عرض التفاصيل</a>
-            </div>
-          </article>
+        <h4>الغاية</h4>
+        <p class="muted">الارتقاء بنتائج اختبارات نافس وتحسين نواتج التعلم، مع المحافظة على مستوى المدرسة واستدامة جودة الأداء التعليمي.</p>
+      </div>
+    </section>
 
-          <ul class="news__list">
-            <li><a href="#">فعالية مدرسية (ضع رابط)</a></li>
-            <li><a href="#">إعلان مهم (ضع رابط)</a></li>
-            <li><a href="#">خبر مختصر (ضع رابط)</a></li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- اتصل بنا -->
-      <section id="contact" class="panel">
+    <!-- ========================= -->
+    <!-- اتصل بنا -->
+    <!-- ========================= -->
+    <section id="contact" class="section section--inner">
+      <div class="section-head">
         <h3>اتصل بنا</h3>
-        <div class="contact">
-          <div class="contact__item">
-            <span class="contact__label">📍 الموقع</span>
-            <span class="muted">عسير - الحرجة - محلاه</span>
-          </div>
-          <div class="contact__item">
-            <span class="contact__label">📧 البريد</span>
-            <a class="link" href="mailto:62932@asrg.moe.gov.sa">62932@asrg.moe.gov.sa</a>
-          </div>
-          <div class="contact__item">
-            <span class="contact__label">📞 التواصل</span>
-            <a class="link" href="tel:+966599955985">966599955985</a>
-          </div>
-          <div class="contact__item">
-            <span class="contact__label">💬 واتساب</span>
-            <a class="btn btn--wa" target="_blank" rel="noopener"
-               href="https://wa.me/966599955985">
-              فتح واتساب
-            </a>
-          </div>
-        </div>
-      </section>
+        <p class="muted">بيانات التواصل</p>
+      </div>
 
-    </div>
-  </main>
+      <div class="contact-box">
+        <div class="contact-row"><b>📍 الموقع:</b> عسير - الحرجة - محلاه</div>
+        <div class="contact-row"><b>📧 البريد:</b> <a class="link" href="mailto:62932@asrg.moe.gov.sa">62932@asrg.moe.gov.sa</a></div>
+        <div class="contact-row"><b>📞 رقم التواصل:</b> <a class="link" href="tel:+966599955985">966599955985</a></div>
+        <div class="contact-row"><b>💬 واتساب:</b> <a class="wa" target="_blank" rel="noopener" href="https://wa.me/966599955985">فتح واتساب</a></div>
+      </div>
+    </section>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> ابتدائية محلاه والطفولة المبكرة — جميع الحقوق محفوظة</p>
-      <p class="muted">تم التصميم بأسلوب رسمي مودرن</p>
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<footer class="footer">
+  <p>© ابتدائية محلاه والطفولة المبكرة</p>
+</footer>
+
 </body>
 </html>
